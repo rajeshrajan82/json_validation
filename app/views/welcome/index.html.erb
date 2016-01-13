@@ -1,1 +1,11 @@
-<h2>Welcome to Json parser</h2>
+
+<div class="container center">
+  <%= form_tag('/posts') do -%>
+  <p>Please enter your json input here</p>
+  <div><%= text_area_tag 'json_text', nil, :size =>"80x15" %></div>
+  
+  <div class="center"><%= submit_tag 'Submit', :class=>"btn btn-primary" %></div>
+<% end -%>
+  
+  
+</div>

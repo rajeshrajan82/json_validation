@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="header">
+    <h3>JSON Parser</h3>
+  </div>
+  <div class="body">
+    <%= yield %>
+  </div>
 
-<%= yield %>
-
+<div class="footer">
+    <h6>&copy; Rajesh Rajan</h6>
+  </div>
 </body>
 </html>
