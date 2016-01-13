@@ -1,11 +1,12 @@
-
 <div class="container center">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :class => "alert alert-danger" %>
+  <% end %>
+
   <%= form_tag('/posts') do -%>
-  <p>Please enter your json input here</p>
-  <div><%= text_area_tag 'json_text', nil, :size =>"80x15" %></div>
-  
-  <div class="center"><%= submit_tag 'Submit', :class=>"btn btn-primary" %></div>
-<% end -%>
-  
-  
+    <p>Please enter your json input here</p>
+    <div><%= text_area_tag 'json_text', nil, :size =>"80x15" %></div>
+    <div class="center"><%= submit_tag 'Submit', :class=>"btn btn-primary" %></div>
+  <% end -%>
+
 </div>

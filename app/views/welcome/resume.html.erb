@@ -1,0 +1,59 @@
+<div class="container-fluid resume">
+  <h2><%= link_to "Home Page", root_path %></h2>
+  <div class="panel panel-info"> 
+    <div class="panel-body">
+      <div class="resume-header">
+        <h1><b><%= @resume["name"] %></b></h1>
+        <h1><%= @resume["email"] %></h1>
+        <h1><%= @resume["mobile"] %></h1>
+      </div>
+      <div class="summary">
+        <h2>Professional Summary</h2>
+        <ul>
+          <% @resume["professional_summary"].each do |summary| %>
+            <li><%= summary["value"] %></li>
+          <% end %>
+        </ul>  
+      </div>
+      <div class="career">
+        <h2>Career Experience</h2>
+        <ul>
+          <% @resume["career_experience"].each do |career| %>
+            <h3><%= career["title"] %></h3>
+            <p><%= career["description"] %></p>
+          <% end %>
+        </ul>    
+      </div>
+      <div class="academic">
+        <h2>Academic Details</h2>
+        <ul>
+          <% @resume["academic_details"].each do |academic| %>
+            <li><%= academic["value"] %></li>
+          <% end %>
+        </ul>  
+      </div>
+      <div class="technical">
+        <h2>Technical Expertise</h2>
+        <ul>
+          <% @resume["technical_expertise"].each do |technical| %>
+            <p><label><%= technical["key"] %></label>: <%= technical["value"] %></p>
+          <% end %>
+        </ul>  
+      </div>
+      <div class="projects">
+        <h2>Projects</h2>
+        <ul>
+          <% @resume["projects"].each do |project| %>
+            <div class="project">
+              <p><label>Project: #<%= project["serial_no"] %>: <%= project["name"] %></label></p>
+              <p><label>Client:</label> <%= project["client"] %></p>
+              <p><label>Peroid:</label> <%= project["period"] %></p>
+              <p><label>Technologies:</label> <%= project["technologies"] %></p>
+              <p><label>Description:</label> <%= project["description"] %></p>
+            </div>
+          <% end %>
+        </ul>  
+      </div>
+    </div>
+  </div>
+</div>
